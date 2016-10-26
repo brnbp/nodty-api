@@ -12,6 +12,7 @@ app.use(cookieParser());
 
 app.use('/feeds', require('./routes/v1/feeds'));
 app.use('/episodes', require('./routes/v1/episodes'));
+app.use('/users', require('./routes/v1/users'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
