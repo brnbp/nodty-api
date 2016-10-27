@@ -13,6 +13,7 @@ app.use(cookieParser());
 app.use('/feeds', require('./routes/v1/feeds'));
 app.use('/episodes', require('./routes/v1/episodes'));
 app.use('/users', require('./routes/v1/users'));
+app.use('/queues', require('./routes/v1/queues'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -20,7 +21,6 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
 
 // error handlers
 
@@ -45,6 +45,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;
