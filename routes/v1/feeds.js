@@ -25,4 +25,3 @@ router.get('/:id/episodes', function(req, res, next) {
 });
 
 module.exports = router;
-
