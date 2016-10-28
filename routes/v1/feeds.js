@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const FeedsModel = {}
+const FeedsModel = require('../../models/feeds')
 const ControllerFeed = require('../../controllers/feeds')
 const FeedsController = new ControllerFeed(FeedsModel)
 
