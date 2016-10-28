@@ -13,8 +13,6 @@ function FeedsController(FeedsModel) {
     this.getByName = (name) => defaultResponse({name})
 
     this.episodes = (id) => defaultResponse({episodes: [id]})
-
-
 }
 
 module.exports = FeedsController
