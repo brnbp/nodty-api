@@ -6,9 +6,9 @@ function FeedsController(FeedsModel) {
 
     this.getById = id => defaultResponse(this.FeedsModel.findOne(id))
 
-    this.latests = () => defaultResponse(this.FeedsModel.latests())
+    this.latests = (limit = 10) => defaultResponse(this.FeedsModel.latests(limit))
 
-    this.top = (count = 24) => defaultResponse({top:[count]})
+    this.top = (limit = 24) => defaultResponse(this.FeedsModel.top(limit))
 
     this.getByName = (name) => defaultResponse({name})
 
