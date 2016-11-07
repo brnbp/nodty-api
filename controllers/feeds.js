@@ -10,7 +10,7 @@ function FeedsController(FeedsModel) {
 
     this.top = (limit = 24) => defaultResponse(this.FeedsModel.top(limit))
 
-    this.getByName = (name) => defaultResponse({name})
+    this.getByName = (name) => defaultResponse(this.FeedsModel.findByName(name))
 
     this.episodes = (id) => defaultResponse({episodes: [id]})
 }

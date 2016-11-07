@@ -11,4 +11,6 @@ module.exports = function FeedsModel(){
   this.top = (limit = 10) => mongoose.find()
                                       .limit(limit)
                                       .sort({listeners: -1, last_episode_at: -1})
+
+  this.findByName = (name) => mongoose.find({name})
 }
