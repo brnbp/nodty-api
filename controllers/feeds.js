@@ -4,9 +4,9 @@ const errorResponse = (message = '', statusCode = 400) => ({error: message, stat
 function FeedsController(FeedsModel) {
     this.FeedsModel = FeedsModel
 
-    this.getById = id => this.FeedsModel.findOne(defaultResponse(id))
+    this.getById = id => defaultResponse(this.FeedsModel.findOne(id))
 
-    this.latests = () => defaultResponse({latests:[]})
+    this.latests = () => defaultResponse(this.FeedsModel.latests())
 
     this.top = (count = 24) => defaultResponse({top:[count]})
 
