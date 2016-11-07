@@ -1,17 +1,14 @@
 module.exports = function FeedsModel(){
 
-    const mongoose = {}
+  const mongoose = {}
 
-    this.findOne = id => mongoose.findOne({id:id})
+  this.findOne = id => mongoose.findOne({id})
 
-    this.latests = function(limit = 10) {
-      mongoose.find()
-        .limit(limit)
-        .sort({last_episode_at: -1})
-    }
+  this.latests = (limit = 10) => mongoose.find()
+                                            .limit(limit)
+                                            .sort({last_episode_at: -1})
 
-    this.top = (limit = 10) => mongoose.find().limit(limit).sort({
-      listeners: -1,
-      last_episode_at: -1
-    })
+  this.top = (limit = 10) => mongoose.find()
+                                      .limit(limit)
+                                      .sort({listeners: -1, last_episode_at: -1})
 }
