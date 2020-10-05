@@ -1,16 +1,16 @@
 const defaultResponse = (data, statusCode = 200) => ({data, statusCode})
 const errorResponse = (message = '', statusCode = 400) => ({error: message, statusCode})
 
-function FeedsController(FeedsModel) {
-    this.FeedsModel = FeedsModel
+function FeedsController(feeds) {
+    this.feeds = feeds
 
-    this.getById = id => defaultResponse(this.FeedsModel.findOne(id))
+    this.getById = id => defaultResponse(this.feeds.findOne(id))
 
-    this.latests = (limit = 10) => defaultResponse(this.FeedsModel.latests(limit))
+    this.latests = (limit = 10) => defaultResponse(this.feeds.latests(limit))
 
-    this.top = (limit = 24) => defaultResponse(this.FeedsModel.top(limit))
+    this.top = (limit = 24) => defaultResponse(this.feeds.top(limit))
 
-    this.getByName = (name) => defaultResponse(this.FeedsModel.findByName(name))
+    this.getByName = (name) => defaultResponse(this.feeds.findByName(name))
 
     this.episodes = (id) => defaultResponse({episodes: [id]})
 }
