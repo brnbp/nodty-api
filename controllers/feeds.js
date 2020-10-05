@@ -10,9 +10,9 @@ function FeedsController(feeds) {
 
     this.top = (limit = 24) => defaultResponse(this.feeds.top(limit))
 
-    this.getByName = (name) => defaultResponse(this.feeds.findByName(name))
+    this.getByName = name => defaultResponse(this.feeds.findByName(name))
 
-    this.episodes = (id) => defaultResponse({episodes: [id]})
+    this.episodes = id => defaultResponse({episodes: [id]})
 }
 
 module.exports = FeedsController
